@@ -1,0 +1,27 @@
+<div class="container" [ngClass]="{'sidebarOpened': sidebarOpened}">
+  <button class="close" (click)="closeSidebar()">
+    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="10" width="3" height="17" rx="1" transform="rotate(-90 0 10)" fill="white"/>
+      <rect x="7" width="3" height="17" rx="1" fill="white"/>
+      </svg>
+  </button>
+  <header>
+    <h1>
+      SLACA 2019
+    </h1>
+  </header>
+  <img src="../../../assets/13-slaca.png" alt="13 Slaca">
+  <ul class="links-lista">
+    <li>
+      Apresentação
+    </li>
+    <li>Comitês</li>
+    <li>Autores</li>
+    <li>Eixos temáticos</li>
+    <li class="active">Trabalhos</li>
+    <li>Contato</li>
+  </ul>
+  <button class="open" (click)="openSidebar()">
+    >>
+  </button>
+</div>

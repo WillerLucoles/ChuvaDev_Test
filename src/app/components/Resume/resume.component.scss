@@ -1,0 +1,85 @@
+@import 'src/styles/Default.scss';
+
+.BoxResume {
+  max-width: 1100px;
+  min-height: 200px;
+  margin: 0 10px;
+  margin-top: 40px;
+  border: 1px solid rgb(216, 216, 216);
+
+  header {
+    background-color: #fdf1eb;
+    padding: 10px;
+
+    h5 {
+      font-family: $roboto;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: rgb(85, 85, 85);
+    }
+  }
+
+  .ConteudoDoBox {
+    margin-top: 5px;
+    padding: 15px;
+
+    p {
+      font-family: $roboto;
+      font-weight: 300;
+      font-size: 0.7rem;
+      color: rgb(85, 85, 85);
+      line-height: 20px;
+      text-align: justify;
+    }
+
+    .btn-show-more {
+      margin-top: 3px;
+      background-color: transparent;
+      color: #ed7839;
+      font-family: $roboto;
+      font-weight: 500;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .DetalhesDeCitacoes {
+    margin-top: 20px;
+    padding: 0 20px;
+    padding-bottom: 10px;
+
+    p {
+      font-family: $roboto;
+      font-weight: 300;
+      font-size: 0.875rem;
+      color: rgb(85, 85, 85);
+      line-height: 20px;
+      letter-spacing: 1px;
+      padding-bottom: 5px;
+    }
+
+    .btn-show-more {
+      margin-top: 5px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: #ed7839;
+      font-family: $roboto;
+      font-weight: 500;
+      font-size: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin: 0 20px;
+    margin-top: 40px;
+  }
+
+  @media (min-width: 1100px) {
+    margin: 0 30px;
+    margin-top: 40px;
+  }
+}

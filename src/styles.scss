@@ -1,0 +1,14 @@
+@import './styles/Default.scss';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ErrorAlert{
+  color: red;
+  font-size: .8rem;
+  font-family: $roboto;
+  font-weight: 500;
+}
