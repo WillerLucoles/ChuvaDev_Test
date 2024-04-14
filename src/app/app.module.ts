@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/Sidebar/sidebar.component';
 import { BoxResume } from './components/Resume/resume.component';
 import { BoxApresentation } from './components/Apresentation/apresentation.component';
-
+import { BoxDiscussoes } from './components/Discussoes/discussoes.component';
 
 
 @NgModule({
@@ -15,6 +15,7 @@ import { BoxApresentation } from './components/Apresentation/apresentation.compo
     SidebarComponent,
     BoxResume,
     BoxApresentation,
+    BoxDiscussoes,
   ],
   imports: [
     BrowserModule,
