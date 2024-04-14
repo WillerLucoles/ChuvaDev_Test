@@ -110,9 +110,9 @@
 
     <!--Secção de perguntas enviadas-->
     <div class="ContainerDePerguntas">
-      <div class="container" *ngFor="let topico of topicos" #topicContainer>
-        <div class="pergunta-container answered-topic" >
-          <h5 class="ops-topic-subject">
+      <div class="Container" *ngFor="let topico of topicos" #topicContainer>
+        <div class="BoxPerguntas" >
+          <h5 class="TittleAssunto">
             {{topico.assunto}}
           </h5>
           <h6>
@@ -121,30 +121,30 @@
           <p>
             {{topico.pergunta}}
           </p>
-          <div class="info">
+          <div class="SectionInformacoes">
             <button class="3dots" (click)="mostrarRespostas(topicContainer)" *ngIf="topico.respostasDosAutores.length > 0">
               <img src="../assets/3-dots.svg" alt="3 pontos">
             </button>            
-            <img class="CoracaoImg" src="../assets/Love.png" alt="Coração"> 
-
+            <img class="CoracaoImg" src="../assets/Love.png" alt="Coração">
             <p>{{topico.likes}} like</p>
             <p>{{topico.respostas}} {{topico.respostas > 1 ? 'Respostas' : 'Respostas'}}</p>
           </div>
+          
           <div class="overlay" *ngIf="!topico.aprovado">
             <img src="../assets/feedback-icon.svg" alt="Feedback">
             <h6>Aguardando feedback dos autores</h6>
-            <button class="editar">
+            <button class="EditarTopico">
               Editar tópico
             </button>
           </div>
         </div>
 
         <div class="respostas comments-container">
-          <div class="resposta" *ngFor="let resposta of topico.respostasDosAutores" [ngClass]="{'autor-coautor': resposta.nome !== 'Usuario'}">
-            <div class="info">
+          <div class="Resposta" *ngFor="let resposta of topico.respostasDosAutores" [ngClass]="{'nomedoautor': resposta.nome !== 'Usuario'}">
+            <div class="Informacoes">
               <h6>{{resposta.nome}}</h6>              
             </div>            
-            <p class="conteudo">{{resposta.resposta}}</p>
+            <p class="Conteudo">{{resposta.resposta}}</p>
           </div>
         </div>
       </div>

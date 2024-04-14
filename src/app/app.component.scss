@@ -442,37 +442,39 @@
       margin: 0 10px;
       margin-top: 10px;
 
-      .container{
+      .Container{
 
-        .pergunta-container{
+        .BoxPerguntas{
           position: relative;
           cursor: pointer;
           box-shadow: 0px 0px 10px 0px rgba(98, 98, 98, 0.27);
           padding: 15px 25px;
 
-          .ops-topic-subject{
+          .TittleAssunto{
             font-family: $roboto;
-            font-weight: 500;
+            font-weight: 550;
             font-size: 1rem;
             color: #ed7839;
           }
 
           h6{
             font-family: $roboto;
-            font-weight: 400;
+            font-weight: 470;
             font-size: .75rem;
             color: rgb(73, 73, 73);
           }
 
           p{
             font-family: $roboto;
-            font-weight: 300;
-            font-size: .9375rem;
+            font-weight: 320;
+            font-size: .9rem;
+            text-align: justify;
             color: rgb(98, 98, 98);
             margin-top: 10px;
+
           }
 
-          .info{
+          .SectionInformacoes{
             display: flex;
             align-items: center;
             gap: 10px;
@@ -492,17 +494,17 @@
           }
 
           .overlay{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             position: absolute;
             cursor: default;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            background-color: rgba(213, 213, 213, 0.605);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            background-color: rgba(145, 143, 143, 0.356);            
             gap: 10px;
             backdrop-filter: blur(1.5px);
 
@@ -513,7 +515,7 @@
               color: rgb(98, 98, 98);
             }
 
-            .editar{
+            .EditarTopico{
               font-family: $roboto;
               font-weight: 300;
               font-size: .875rem;
@@ -528,7 +530,7 @@
           }
 
           &:first-of-type{
-            margin-bottom: 10px;
+            margin-bottom: 15px;
           }
         }
 
@@ -539,7 +541,7 @@
 
         &.respostasActice{
 
-          .pergunta-container{
+          .BoxPerguntas{
             &:first-of-type{
               margin-bottom: 0;
             }
@@ -548,14 +550,14 @@
           .respostas{
             display: block;
 
-            .resposta{
+            .Resposta{
               display: flex;
               flex-direction: column;
               gap: 10px;
               padding: 15px 25px;
               border: 1px solid rgba(98, 98, 98, 0.186);
 
-              .info{
+              .Informacoes{
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
@@ -581,7 +583,7 @@
                 }
               }
 
-              .conteudo{
+              .Conteudo{
                 font-family: $roboto;
                 font-weight: 300;
                 font-size: .9375rem;
@@ -589,7 +591,7 @@
                 color: rgb(98, 98, 98);
               }
 
-              &.autor-coautor{
+              &.nomedoautor{
                 background: white;
               }
             }

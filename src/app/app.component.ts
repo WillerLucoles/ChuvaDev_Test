@@ -1,5 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+interface Topico {
+  assunto: string;
+  pergunta: string;
+  nome: string;
+  respostas: number;
+  likes: number;
+  respostasDosAutores: { nome: string; resposta: string }[];
+  aprovado: boolean;
+}
+
+
  
 @Component({
   selector: 'app-root',
@@ -18,7 +30,7 @@ export class AppComponent implements OnInit{
   
 
 
-  topicos = [
+  topicos: Topico[] = [
     {
       assunto: 'Assunto da pergunta aparece aqui',
       nome: 'Carlos Henrique Santos',
@@ -29,10 +41,8 @@ export class AppComponent implements OnInit{
       respostasDosAutores: [
         {
           nome: 'Teste 1',
-          resposta: 'Resposta do autor é aqui. Resposta Teste 1',
-          
-          
-        },        
+          resposta: 'Resposta do autor é aqui. Resposta Teste 1'
+        }
       ]
     },
     {
@@ -45,20 +55,17 @@ export class AppComponent implements OnInit{
       respostasDosAutores: [
         {
           nome: 'Teste 2',
-          resposta: 'Resposta do autor é aqui. Resposta Teste 2',
-          
-          
-        },        
+          resposta: 'Resposta do autor é aqui. Resposta Teste 2'
+        }
       ]
-    },
-    
+    }
   ];
   
   ngOnInit(): void {
     this.initForm();
   }
 
-  private initForm(){
+  private initForm(): void {
     this.form = new FormGroup({
       assunto: new FormControl('', Validators.required),
       pergunta: new FormControl('', Validators.required),
@@ -71,7 +78,7 @@ export class AppComponent implements OnInit{
   }
   
 
-  mostrarRespostas(topico: HTMLDivElement){
+  mostrarRespostas(topico: HTMLDivElement): void {
     if(topico.classList.contains('respostasActice')) {
       topico.classList.remove('respostasActice')
       return;
@@ -79,7 +86,7 @@ export class AppComponent implements OnInit{
     topico.classList.add('respostasActice')
   }
 
-  enviarTopico(){
+  enviarTopico(): void {
     if(!this.form.valid) return;
     const topico = this.form.value;
     topico.nome = 'Carlos Henrique Santos';
