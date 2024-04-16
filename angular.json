@@ -43,7 +43,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "17kb"
+                  "maximumError": "4kb"
                 }
               ],
               "fileReplacements": [
@@ -105,6 +105,6 @@
     }
   },
   "cli": {
-    "analytics": "97d091a6-f549-4c27-ad24-16bd2916b9ad"
+    "analytics": "7ae3ab77-b4af-4409-b2e6-e83429a3f57b"
   }
 }

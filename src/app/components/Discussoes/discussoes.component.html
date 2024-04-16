@@ -27,22 +27,33 @@
     
 
     <!--Página de Formulario do Novo Topico-->
-    <div class="NewTopicOpened" *ngIf="criarTopicoAberto && !topicoEnviado">
+    <div class="comments-container  NewTopicOpened" *ngIf="criarTopicoAberto && !topicoEnviado">
       <p>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores</p>
 
       <form class="FormularioParaEnvio" [formGroup]="form" (ngSubmit)="enviarTopico()">
         <div class="CampoPadrao">
           <label for="assunto">Assunto</label>
-          <input type="text" id="assunto" placeholder="Defina um tópico sucinto para notificar os autores" formControlName="assunto">
-          <span class="ErrorAlert" *ngIf="form.get('assunto')?.invalid && form.get('assunto')?.touched">Favor digite o assunto.</span>
+          <input 
+          type="text" 
+          id="subject"
+          name="subject"
+          class="subject"
+          placeholder="Defina um tópico sucinto para notificar os autores..." 
+          formControlName="assunto">          
         </div>
         <div class="CampoPadrao Conteudo">
           <label for="Conteudo">Conteúdo</label>          
-          <textarea id="Conteudo" cols="30" rows="10" placeholder="Comente aqui." formControlName="pergunta"></textarea>
+          <textarea 
+          id="content Conteudo" 
+          name="content"
+          cols="30" 
+          rows="10" 
+          placeholder="Comente aqui." 
+          formControlName="pergunta"></textarea>
         </div>
         <div class="EspacoParaEnvioDoFormulario">
           <div class="Background"></div>
-          <button class="btn-create-topic" type="submit">
+          <button class="btn-send btn-create-topic" type="submit">
             <span>Enviar</span>
           </button>
         </div>
@@ -52,7 +63,7 @@
 
 
     <!--Página de Confirmação de Envio-->
-    <div class="NewTopicSended" *ngIf="topicoEnviado">
+    <div class="comments-container NewTopicSended" *ngIf="topicoEnviado">
       <h4>Seu tópico foi enviado com sucesso! :D</h4>
       <p>Agradecemos por sua contribuição, uma notificação será enviada ao seu email assim que seu tópico for respondido!</p>
       <a>Descubra outros trabalhos!</a>
@@ -60,13 +71,13 @@
         <div class="UnderlineDecotarion"></div>
         <button class="btn-create-topic" (click)="criarTopico()">
           <img src="./assets/iconPlus.svg" alt="Plus">
-          <span>Criar Novo Tópico</span>
+          <span>criar novo tópico</span>
         </button>
       </div>
     </div>
 
     <!--Secção de perguntas enviadas-->
-    <div class="ContainerDePerguntas">
+    <div class=" ContainerDePerguntas">
       <div class="Container" *ngFor="let topico of topicos" #topicContainer>
         <div class="BoxPerguntas" >
           <h5 class="TittleAssunto">
@@ -78,25 +89,25 @@
           <p>
             {{topico.pergunta}}
           </p>
-          <div class="SectionInformacoes">
-            <button class="3dots" (click)="mostrarRespostas(topicContainer)" *ngIf="topico.respostasDosAutores.length > 0">
+          <div class="answered-topic SectionInformacoes">
+            <button class="ops-topic-subject 3dots" (click)="mostrarRespostas(topicContainer)" *ngIf="topico.respostasDosAutores.length > 0">
               <img src="../assets/3-dots.svg" alt="3 pontos">
             </button>            
             <img class="CoracaoImg" src="../assets/Love.png" alt="Coração">
             <p>{{topico.likes}} like</p>
-            <p>{{topico.respostas}} {{topico.respostas > 1 ? 'Respostas' : 'Respostas'}}</p>
+            <p class="likes">{{topico.respostas}} {{topico.respostas > 1 ? 'Respostas' : 'Respostas'}}</p>
           </div>
           
           <div class="overlay" *ngIf="!topico.aprovado">
             <img src="../assets/feedback-icon.svg" alt="Feedback">
-            <h6>Aguardando feedback dos autores</h6>
+            <h6 class="feedback">Aguardando feedback dos autores</h6>
             <button class="EditarTopico">
               Editar tópico
             </button>
           </div>
         </div>
 
-        <div class="respostas comments-container">
+        <div class="comments-container respostas">
           <div class="Resposta" *ngFor="let resposta of topico.respostasDosAutores" [ngClass]="{'nomedoautor': resposta.nome !== 'Usuario'}">
             <div class="Informacoes">
               <h6>{{resposta.nome}}</h6>              

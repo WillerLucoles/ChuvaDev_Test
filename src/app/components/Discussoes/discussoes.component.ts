@@ -66,8 +66,8 @@ export class BoxDiscussoes implements OnInit{
 
   private initForm(): void {
     this.form = new FormGroup({
-      assunto: new FormControl('', Validators.required),
-      pergunta: new FormControl('', Validators.required),
+      assunto: new FormControl(''),
+      pergunta: new FormControl(''),
     })
   }
   

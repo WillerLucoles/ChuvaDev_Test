@@ -14,13 +14,8 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openSidebar(){
-    this.sidebarOpened = true;
-  }
-
-  closeSidebar(){
-    this.sidebarOpened = false;
+  toggleSidebar(open: boolean) {
+    this.sidebarOpened = open;
   }
 
 }
-
