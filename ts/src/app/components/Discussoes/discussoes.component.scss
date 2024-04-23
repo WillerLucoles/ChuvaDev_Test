@@ -1,0 +1,510 @@
+@import 'src/styles/Default.scss';
+
+.BoxDiscussoes{    
+    margin: 0 10px;
+    margin-top: 40px;
+    border: 1px solid rgb(216, 216, 216);
+
+    header{
+      background-color: #fdf1eb;
+      padding: 10px;
+
+      h5{
+        font-family: $roboto;
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: rgb(85, 85, 85);
+      }
+    }
+
+    .NewTopic{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      padding: 20px 10px;
+
+      h4{
+        font-family: $roboto;
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: #ed7839;
+        text-align: center;
+      }
+
+      .ImagesDiscussoes{
+        display: flex;
+        gap: 40px;
+      }
+
+      p{
+        font-family: $roboto;
+        font-weight: 300;
+        font-size: .875rem;
+        line-height: 20px;
+        color: rgb(85, 85, 85);
+        text-align: center;
+      }
+
+      .BoxNewTopic{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .UnderlineDecotarion{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-100%);
+          width: 100%;
+          height: 2px;
+          background-color: rgba(173, 171, 171, 0.419);
+        }
+
+        .btn-create-topic{
+          display: flex;
+          justify-content: center;
+          position: relative;
+          z-index: 1;
+          background: $orange-gradient;
+          gap: 7px;
+          padding: 5px 10px;
+          border-radius: 4px;
+          border: none;
+          outline: none;
+          align-items: center;
+          cursor: pointer;
+
+          span{
+            color: white;
+            font-family: $roboto;
+            font-weight: 500;
+            font-size: .9375rem;
+            letter-spacing: .5px;
+            z-index: 2;
+          }
+
+          img{
+            z-index: 2;
+          }
+
+          &::after{
+            content: "";
+            position: absolute;
+            border-radius: 4px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            ;
+            opacity: 0;
+            transition: .2s;
+          }
+
+          &:hover::after{
+            opacity: .5;
+          }
+        }
+      }
+    }
+
+    .NewTopicOpened{
+
+      p{
+        font-family: $roboto;
+        font-weight: 300;
+        font-size: .875rem;
+        line-height: 20px;
+        color: rgb(85, 85, 85);
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+
+      .FormularioParaEnvio{
+        display: flex;
+        flex-direction: column;
+        padding: 0px 20px;
+
+        .CampoPadrao{
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          margin: 0 auto;
+
+          label{
+            color: #ed7839;
+            font-size: .9375rem;
+            font-family: $roboto;
+            font-weight: 600;
+          }
+
+          input{
+            width: 100%;
+            height: 40px;
+            border: 1px solid rgb(185, 185, 185);
+            outline: none;
+            border-radius: 5px;
+            font-family: $roboto;
+            font-weight: 400;
+            padding: 0 10px;
+          }
+
+          textarea{
+            width: 100%;
+            height: 60px;
+            border: 1px solid rgb(185, 185, 185);
+            outline: none;
+            border-radius: 5px;
+            font-family: $roboto;
+            font-weight: 400;
+            padding: 0 10px;
+          }
+
+          &.Conteudo{
+            margin-top: 20px;
+          
+
+            DetalhesDeCitacoesarea{
+              resize: none;
+              width: 100%;
+              border: 1px solid rgb(185, 185, 185);
+              outline: none;
+              border-radius: 5px 5px 0 0;
+              font-family: $roboto;
+              font-weight: 300;
+              padding: 10px;
+            }
+          }
+        }
+
+        .UnderlineDecotarion{
+          width: 100%;
+          height: 1px;
+          margin-top: 20px;
+          margin-bottom: 30px;
+          background-color: rgba(206, 205, 205, 0.651);
+        }
+
+        .EspacoParaEnvioDoFormulario{
+          width: 90%;
+          margin: auto;
+          position: relative;
+
+          .Background{
+            background-color: #eaf1f2;
+            width: 100%;
+            height: 35px;
+            border: 1px solid rgb(185, 185, 185);
+            border-top: 0;
+            border-radius: 0 0 4px 4px;
+          }
+
+          .btn-create-topic{
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            padding: 0 70px;
+            outline: none;
+            border: none;
+            background: $orange-gradient;
+            border-radius: 0 0 4px 0;
+
+            span{
+              color: white;
+              font-family: $roboto;
+              font-weight: 600;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .NewTopicSended{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+
+      h4{
+        font-family: $roboto;
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: #ed7839;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      p{
+        font-family: $roboto;
+        font-weight: 300;
+        font-size: .875rem;
+        line-height: 20px;
+        color: rgb(85, 85, 85);
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      a{
+        font-family: $roboto;
+        font-weight: 300;
+        font-size: .875rem;
+        padding-bottom: 2px;
+        color: #f48f44;
+        border-bottom: 1px solid #f48f44;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .BoxNewTopic{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-top: 55px;
+
+        .UnderlineDecotarion{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-100%);
+          width: 100%;
+          height: 2px;
+          background-color: rgba(173, 171, 171, 0.419);
+        }
+
+        .btn-create-topic{
+          position: relative;
+          z-index: 1;
+          border: none;
+          outline: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 7px;
+          background: $orange-gradient;
+          padding: 5px 10px;
+          border-radius: 4px;
+          cursor: pointer;
+
+          span{
+            color: white;
+            font-family: $roboto;
+            font-weight: 500;
+            font-size: .9375rem;
+            letter-spacing: .5px;
+            z-index: 2;
+          }
+
+          img{
+            z-index: 2;
+          }
+
+          &::after{
+            content: "";
+            position: absolute;
+            border-radius: 4px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(132, 86, 0);
+            opacity: 0;
+            transition: .2s;
+          }
+
+          &:hover::after{
+            opacity: .5;
+          }
+        }
+      }
+    }
+
+    .ContainerDePerguntas{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 0 10px;
+      margin-top: 10px;
+
+      .Container{
+
+        .BoxPerguntas{
+          position: relative;
+          cursor: pointer;
+          box-shadow: 0px 0px 10px 0px rgba(98, 98, 98, 0.27);
+          padding: 15px 25px;
+
+          .TittleAssunto{
+            font-family: $roboto;
+            font-weight: 550;
+            font-size: 1rem;
+            color: #ed7839;
+          }
+
+          h6{
+            font-family: $roboto;
+            font-weight: 470;
+            font-size: .75rem;
+            color: rgb(73, 73, 73);
+          }
+
+          p{
+            font-family: $roboto;
+            font-weight: 320;
+            font-size: .9rem;
+            text-align: justify;
+            color: rgb(98, 98, 98);
+            margin-top: 10px;
+
+          }
+
+          .SectionInformacoes{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+
+            p{
+              margin-top: 0;
+            }
+
+            button{
+              border: none;
+              outline: none;
+              background: transparent;
+              cursor: pointer;
+              padding: 0 3px;
+            }
+          }
+
+          .overlay{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            cursor: default;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(145, 143, 143, 0.356);            
+            gap: 10px;
+            backdrop-filter: blur(1.5px);
+
+            h6{
+              font-family: $roboto;
+              font-weight: 300;
+              font-size: .9375rem;
+              color: rgb(98, 98, 98);
+            }
+
+            .EditarTopico{
+              font-family: $roboto;
+              font-weight: 300;
+              font-size: .875rem;
+              border: none;
+              outline: none;
+              background-color: transparent;
+              padding-bottom: 2px;
+              border-bottom: 1px solid #ed7839;
+              color: #ed7839;
+              cursor: pointer;
+            }
+          }
+
+          &:first-of-type{
+            margin-bottom: 15px;
+          }
+        }
+
+        .respostas{
+          display: none;
+          margin-bottom: 10px;
+        }
+
+        &.respostasActice{
+
+          .BoxPerguntas{
+            &:first-of-type{
+              margin-bottom: 0;
+            }
+          }
+
+          .respostas{
+            display: block;
+
+            .Resposta{
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              padding: 15px 25px;
+              border: 1px solid rgba(98, 98, 98, 0.186);
+
+              .Informacoes{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                h6{
+                  font-family: $roboto;
+                  font-weight: 400;
+                  font-size: .8125rem;
+                  color: rgb(98, 98, 98);
+                }
+
+                .role{
+                  display: flex;
+                  justify-content: center;
+                  gap: 8px;
+
+                  span{
+                    font-family: $roboto;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: #ed7839;
+                  }
+                }
+              }
+
+              .Conteudo{
+                font-family: $roboto;
+                font-weight: 300;
+                font-size: .9375rem;
+                line-height: 20px;
+                color: rgb(98, 98, 98);
+              }
+
+              &.nomedoautor{
+                background: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .CoracaoImg{
+    width: 3%;
+    padding: 0;
+  }
+
+@media(min-width: 768px){
+    .BoxDiscussoes{
+        margin: 0 20px;
+        margin-top: 40px;
+    }
+} 
+
+  
+@media(min-width: 1100px){
+    .BoxDiscussoes{
+        margin: 0 30px;
+        margin-top: 40px;
+    }
+}

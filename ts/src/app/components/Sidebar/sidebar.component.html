@@ -1,0 +1,22 @@
+<div class="container" [ngClass]="{'sidebarOpened': sidebarOpened}">
+  <button class="close" (click)="toggleSidebar(false)">X</button>
+  <header>
+    <h1>
+      SLACA 2019
+    </h1>
+  </header>
+  <img src="../../../assets/13-slaca.png" alt="13 Slaca">
+  <ul class="links-lista">
+    <li>
+      Apresentação
+    </li>
+    <li>Comitês</li>
+    <li>Autores</li>
+    <li>Eixos temáticos</li>
+    <li class="active">Trabalhos</li>
+    <li>Contato</li>
+  </ul>
+  <button class="open" (click)="toggleSidebar(true)">
+    <img src="../../../assets/Hamburger_icon.svg.png" alt="Hamburger_icon">
+  </button>
+</div>

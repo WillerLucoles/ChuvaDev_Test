@@ -1,0 +1,120 @@
+  <!--3º Secion Box Discussões-->
+  <section class="BoxDiscussoes">
+    <header>
+      <h5>
+        Discussões
+      </h5>
+    </header>
+
+    <div class="NewTopic" *ngIf="!criarTopicoAberto">
+      <h4>Compartilhe suas ideias ou dúvidas com os autores!</h4>
+      <div class="ImagesDiscussoes">
+        <img src="../assets/maocomflor.svg" alt="Proteção a Natureza">
+        <img src="../assets/qa_img.svg" alt="Opniões">
+        <img src="../assets/new_Ideias.svg" alt="Ideias">
+      </div>
+      <p>Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade? Deixe seus questionamentos ou sugestões para o autor!</p>
+
+      <!--Criar Novo Topico-->
+      <div class="BoxNewTopic">
+        <div class="UnderlineDecotarion"></div>
+        <button class="btn-create-topic" (click)="criarTopico()">
+          <img src="../assets/iconPlus.svg" alt="Plus">
+          <span>criar tópico</span>
+        </button>
+      </div>
+    </div>
+    
+
+    <!--Página de Formulario do Novo Topico-->
+    <div class="comments-container  NewTopicOpened" *ngIf="criarTopicoAberto && !topicoEnviado">
+      <p>Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores</p>
+
+      <form class="FormularioParaEnvio" [formGroup]="form" (ngSubmit)="enviarTopico()">
+        <div class="CampoPadrao">
+          <label for="assunto">Assunto</label>
+          <input 
+          type="text" 
+          id="subject"
+          name="subject"
+          class="subject"
+          placeholder="Defina um tópico sucinto para notificar os autores..." 
+          formControlName="assunto">          
+        </div>
+        <div class="CampoPadrao Conteudo">
+          <label for="Conteudo">Conteúdo</label>          
+          <textarea 
+          id="content Conteudo" 
+          name="content"
+          cols="30" 
+          rows="10" 
+          placeholder="Comente aqui." 
+          formControlName="pergunta"></textarea>
+        </div>
+        <div class="EspacoParaEnvioDoFormulario">
+          <div class="Background"></div>
+          <button class="btn-send btn-create-topic" type="submit">
+            <span>Enviar</span>
+          </button>
+        </div>
+        <div class="UnderlineDecotarion"></div>
+      </form>
+    </div>
+
+
+    <!--Página de Confirmação de Envio-->
+    <div class="comments-container NewTopicSended" *ngIf="topicoEnviado">
+      <h4>Seu tópico foi enviado com sucesso! :D</h4>
+      <p>Agradecemos por sua contribuição, uma notificação será enviada ao seu email assim que seu tópico for respondido!</p>
+      <a>Descubra outros trabalhos!</a>
+      <div class="BoxNewTopic">
+        <div class="UnderlineDecotarion"></div>
+        <button class="btn-create-topic" (click)="criarTopico()">
+          <img src="./assets/iconPlus.svg" alt="Plus">
+          <span>criar novo tópico</span>
+        </button>
+      </div>
+    </div>
+
+    <!--Secção de perguntas enviadas-->
+    <div class=" ContainerDePerguntas">
+      <div class="Container" *ngFor="let topico of topicos" #topicContainer>
+        <div class="BoxPerguntas" >
+          <h5 class="TittleAssunto">
+            {{topico.assunto}}
+          </h5>
+          <h6>
+            {{topico.nome}}
+          </h6>
+          <p>
+            {{topico.pergunta}}
+          </p>
+          <div class="answered-topic SectionInformacoes">
+            <button class="ops-topic-subject 3dots" (click)="mostrarRespostas(topicContainer)" *ngIf="topico.respostasDosAutores.length > 0">
+              <img src="../assets/3-dots.svg" alt="3 pontos">
+            </button>            
+            <img class="CoracaoImg" src="../assets/Love.png" alt="Coração">
+            <p>{{topico.likes}} like</p>
+            <p class="likes">{{topico.respostas}} {{topico.respostas > 1 ? 'Respostas' : 'Respostas'}}</p>
+          </div>
+          
+          <div class="overlay" *ngIf="!topico.aprovado">
+            <img src="../assets/feedback-icon.svg" alt="Feedback">
+            <h6 class="feedback">Aguardando feedback dos autores</h6>
+            <button class="EditarTopico">
+              Editar tópico
+            </button>
+          </div>
+        </div>
+
+        <div class="comments-container respostas">
+          <div class="Resposta" *ngFor="let resposta of topico.respostasDosAutores" [ngClass]="{'nomedoautor': resposta.nome !== 'Usuario'}">
+            <div class="Informacoes">
+              <h6>{{resposta.nome}}</h6>              
+            </div>            
+            <p class="Conteudo">{{resposta.resposta}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
