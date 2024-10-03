@@ -1,34 +1,63 @@
-# Exercícios
 
-Olá! Este repositório contém os exercícios de desenvolvimento da Chuva, você **deve** implementar pelo menos uma das tecnologias disponíveis, conforme sua preferência pessoal e aptidão.
+# Slaca 2019
 
-Só serão considerados para correção testes em que as verificações do Github Actions estejam passando (verdinhas).
+Este projeto foi desenvolvido como parte de meus estudos sobre Angular, TypeScript e testes com Cypress. O objetivo foi criar um site funcional para o evento **SLACA 2019** (Simpósio Latino Americano de Ciência de Alimentos) enquanto explorava boas práticas de desenvolvimento web e testes automatizados.
 
+## Tecnologias Utilizadas
 
-# Tecnologias
-## Dart
-Nesse caso você deve implementar um protótipo de alta fidelidade no figma de uma tela para você implementar em Flutter, [veja detalhes aqui](https://github.com/chuva-inc/exercicios-2023/tree/master/dart/).
+- **Angular**
+- **TypeScript**
+- **Cypress**
 
-## PHP
-Em PHP você deve implementar o [GaloScrapper, veja os detalhes aqui](https://github.com/chuva-inc/exercicios-2023/tree/master/php/src/WebScrapping).
+## Funcionalidades
 
-## Typescript + HTML + SCSS
-Nesse caso você deve implementar uma [página de trabalho](https://github.com/chuva-inc/exercicios-2023/tree/master/ts). Pra facilitar sua vida, nosso repositório já vem com pronto pra consumo, e mesmo que você não for familiar com o Angular ou Typescript, dá pra só colocar o html e o scss nos arquivos corretos, e vai funcionar (inclusive os testes automatizados vão passar).
+- Página principal com informações sobre o evento
+- Seção para submissão de trabalhos científicos
+- Agenda de palestras e workshops
+- Cadastro e login para usuários
+- Integração com API para exibir os detalhes dos eventos
 
-# FAQ
-Ficou com alguma dúvida? Crie uma issue nesse repo com a sua dúvida :)
+## Estrutura do Projeto
 
-## Posso resolver mais de um exercício?
-Sim, pode resolver em todos se quiser, e vamos levar todas as resoluções em consideração!
+A estrutura do projeto segue o padrão comum de aplicações Angular, com componentes organizados em módulos, serviços para comunicação com APIs e testes automatizados utilizando Cypress.
 
-## Tenho que resolver todos os exercícios?
-Não, você pode resolver só um, dois, ou todos.
+### Testes Automatizados
 
-## Como entregar os exercícios?
+Este projeto utiliza **Cypress** para realizar testes de ponta a ponta. Os testes cobrem funcionalidades críticas como login, submissão de trabalhos e navegação entre páginas.
 
-Para entregar os exercícios:
+## Como rodar
 
-1. Crie um fork **público** deste repositório.
-2. Enquanto programa sua solução, faça [commits atômicos](https://en.wikipedia.org/wiki/Atomic_commit).
-3. Quando estiver tudo passando nos testes, grave o vídeo explicando sua resolução.
-4. Nos envie o link do seu repositório pelo formulário que te enviamos.
+Dependências:
+
+- Node/npm
+- Cypress
+
+Rode o seguinte comando para instalar o ambiente:
+
+```bash
+npm install
+```
+
+Para rodar os testes, rode o seguinte comando:
+
+```bash
+npm run test
+```
+
+Para desenvolver, rode os seguintes comandos:
+
+Para ligar o ambiente:
+
+```bash
+ng serve
+```
+
+Para rodar a UI de testes:
+
+```bash
+npx cypress open --env type=base
+```
+
+---
+
+Desenvolvido por Willer Lucoles para fins de aprendizado e aprimoramento em parceria com Chuva-ink.
